@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Form practice</h1>
+    <div>
+        <a href="index.html">홈으로 이동하기</a>
+    </div>
+    <hr>
+    <h2>기본 form</h2>
+    <form action="/index.html">
+        <p>
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" placeholder="ID" />
+        </p>
+        <p>
+            <label for="pw">Password:</label>
+            <input type="password" id="pw" name="pw" placeholder="Password" />
+        </p>
+        <p>
+            <button type="button">타입=button</button>
+        </p>
+        <p>
+            <button type="submit">타입=submit</button>
+        </p>
+    </form>
+    <hr>
+    <h2>각종 사이트 검색 form</h2>
+    <p>
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <button>Search Reddit</button>
+    </form>
+    </p>
+    <p>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+    </p>
+    <p>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query"> <span>엔터 시 유튜브 검색</span>
+        <div>버튼이 없는 경우 그냥 입력 후 엔터를 누르면 작동이 된다.</div>
+    </form>
+    </p>
+
+    <h2>More input!</h2>
+    <form action="/index.html">
+        <input type="checkbox" name="agree_tos" id="agree" checked>
+        <label for="agree">I agree to everything</label>
+        <p>
+            <label for="size">xs</label>
+            <input type="radio" name="size" id="xs" value="xs">
+            <label for="size">s</label>
+            <input type="radio" name="size" id="s" value="s">
+            <label for="size">m</label>
+            <input type="radio" name="size" id="m" value="m">
+        </p>
+        <p>
+            <label for="">Please Select an Entree</label>
+            <select name="meal" id="meal">
+                <option value="">옵션을 선택해주세요.</option>
+                <option value="fish">Fish</option>
+                <option value="veg">Veg</option>
+                <option value="stake">Stake</option>
+            </select>
+        </p>
+        <p>
+            <label for="cheese_level">치즈양 선택</label>
+            <input type="range" id="cheese" min="1" max="10" step="1" name="cheese_level">
+        </p>
+        <p>
+            <label for="requests">추가요청</label>
+            <br>
+            <textarea name="requests" id="requests" cols="30" rows="3" placeholder="추가요청사항을 입력해주세요"></textarea>
+        </p>
+        <button id="submit">submit</button>
+    </form>
+
+    <h2>빌트인 유효성 검사 데모 (클라이언트 사이드 유효성 검사)</h2>
+    <form action="/dummy">
+        <label for="first">Enter First Name</label>
+        <input type="text" name="first" id="first" required>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" minlength="5" maxlength="10" required>
+        </p>
+
+        <p>
+            <label for="email">input type=email</label>
+            <input type="email" name="email" required>
+            <br>
+            <label for="url">input type=url</label>
+            <input type="url" name="url">
+        </p>
+        <button>Submit</button>
+    </form>
+
+</body>
+
+</html>

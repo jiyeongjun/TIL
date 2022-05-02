@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Registration</title>
+</head>
+
+<body>
+    <h1>Race Registraction!</h1>
+    <p>
+    <form action="/summit">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" minlength="1" maxlength="5" placeholder="1~5자 입력"
+            required />
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" minlength="1" maxlength="20" placeholder="1~20자 입력"
+            required />
+        </p>
+
+        <p>
+        <div>
+            <input type="radio" name="race" id="5k" value="5k">
+            <label for="5k">Fun Run 5k</label>
+        </div>
+        <div>
+            <input type="radio" name="race" id="half" value="half">
+            <label for="half">Half Marathon</label>
+        </div>
+        <div>
+            <input type="radio" name="race" id="full" value="full">
+            <label for="full">Full Marathon</label>
+        </div>
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </p>
+        <p>
+            <select name="age" id="age">
+                <option value="kid">Under18</option>
+                <option value="ya">18-30</option>
+                <option value="adults">31-51</option>
+                <option value="seniors">Over51</option>
+            </select>
+        </p>
+        <button>Register!</button>
+    </form>
+</body>
+
+</html>

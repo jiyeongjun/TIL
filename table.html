@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>테이블 만들기</h1>
+    <div>
+        <a href="index.html">홈으로 이동하기</a>
+    </div>
+    <hr>
+    <div>
+        <h2>시멘틱을 적용한 테이블</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>식성</th>
+                    <th>특징</th>
+                    <th>서식지</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>사자</td>
+                    <td>육식</td>
+                    <td>아프리카의 왕이며 매우 강력하다</td>
+                    <td>아프리카</td>
+                </tr>
+                <tr>
+                    <td>사슴</td>
+                    <td>초식</td>
+                    <td>뿔은 강력해보이지만 겁이 많다. 뿔은 녹용으로 소비되기도 한다.</td>
+                    <td>다양하다</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2>colspan과 rowspan적용한 테이블</h2>
+        <p>수도정보에 colspan=3, 나머지 첫번째 행은 rowspan=2를 적용</p>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">나라</th>
+                    <th rowspan="2">총인구수</th>
+                    <th rowspan="2">면적</th>
+                    <th colspan="3">수도정보</th>
+                </tr>
+                <tr>
+                    <th>수도이름</th>
+                    <th>인구수</th>
+                    <th>명소</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>한국</td>
+                    <td>사천만</td>
+                    <td>1000</td>
+                    <td>서울</td>
+                    <td>칠백만</td>
+                    <td>경복궁</td>
+                </tr>
+                <tr>
+                    <td>와칸다</td>
+                    <td>백만</td>
+                    <td>1000</td>
+                    <td>칸칸다</td>
+                    <td>칠백만</td>
+                    <td>동물원</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
