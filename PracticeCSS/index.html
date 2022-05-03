@@ -5,39 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS연습</title>
-    <link rel="stylesheet" href="src/app.css" />
+    <title>계산기 FE39 지영준</title>
+    <link rel="stylesheet" href="src/calculator.css" />
 </head>
 
 <body>
-    <nav><a href="codestates.html">UR클래스 실습화면으로 이동.</a></nav>
-    <h1>Code States - FE39 계산기 구현하기</h1>
-    <section id="container">
-        <div style="background-color:rgb(8, 235, 235)"></div>
-        <div style="background-color:rgb(216, 158, 11)"></div>
-        <div style="background-color:rgb(158, 26, 188)"></div>
-        <div style="background-color:rgb(41, 154, 81)"></div>
-        <div style="background-color:rgb(49, 23, 151)"></div>
-        <div style="background-color:rgb(235, 8, 8)"></div>
-        <div style="background-color:rgb(255, 145, 0)"></div>
-        <div style="background-color:rgb(174, 188, 26)"></div>
-        <div style="background-color:rgb(41, 154, 81)"></div>
-        <div style="background-color:rgb(0, 157, 255)"></div>
-        <div style="background-color:rgb(8, 235, 235)"></div>
-        <div style="background-color:rgb(216, 158, 11)"></div>
-        <div style="background-color:rgb(158, 26, 188)"></div>
-        <div style="background-color:rgb(41, 154, 81)"></div>
-        <div style="background-color:rgb(49, 23, 151)"></div>
-        <div style="background-color:rgb(235, 8, 8)"></div>
-        <div style="background-color:rgb(255, 145, 0)"></div>
+    <section class="calculator">
+        <span class="name">CodeState FE39</span>
+        <div class="calculator__buttons">
+            <div class="row_button">
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="operator">/</button>
+            </div>
+            <div class="row_button">
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="operator">x</button>
+            </div>
+            <div class="row_button">
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="operator">-</button>
+            </div>
+            <div class="row_button">
+                <button class="number">0</button>
+                <button class="number">.</button>
+                <button class="equal">=</button>
+                <button class="operator">+</button>
+            </div>
+        </div>
+        <div class="ac_button"> <button>AC</button> </div>
+        <div class="calculator__display--bare">
+            <div class="formula">2322 + 32322 = 232331</div>
+        </div>
+        <div class="calculator__display--for-advanced">
+            <div class="result">1000 + 2000 = 3000</div>
+        </div>
+        <img src="https://media.istockphoto.com/vectors/history-icon-vector-id1178882452?k=20&m=1178882452&s=170667a&w=0&h=eKdUuGoTBV4bmrKJ0ukK4xZ5535Mjgr_QCSoYgiJN7Q="
+            alt="이미지 url 업데이트 요망">
     </section>
-
-    <h2>Flex 연습</h2>
-    <main>
-        <section class="sidebar"></section>
-        <section class="maincontent"></section>
-        <section class="sidebar"></section>
-    </main>
+    <script src="src/index.js"></script>
 </body>
 
 </html>

@@ -23,7 +23,6 @@ body {
     border: 2px solid rgb(255, 0, 0);
     flex: 2;
     display: flex;
-    display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: space-around;
@@ -35,7 +34,6 @@ body {
     margin: 1px 1px;
     border: 2px solid rgb(255, 0, 0);
     flex: 3;
-    display: flex;
     display: flex;
     flex-flow: column;
     align-items: center;
