@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    box-sizing: boder-box;
+    display: flex;
+}
+
+#container1 {
+    width: 100vw;
+    height: 100vh;
+    margin: 1px 1px;
+    border: 2px solid rgb(255, 0, 0);
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#container2 {
+    width: 100vw;
+    height: 100vh;
+    margin: 1px 1px;
+    border: 2px solid rgb(255, 0, 0);
+    flex: 2;
+    display: flex;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#container3 {
+    width: 100vw;
+    height: 100vh;
+    margin: 1px 1px;
+    border: 2px solid rgb(255, 0, 0);
+    flex: 3;
+    display: flex;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#container1 .icon {
+    width: 2rem;
+    height: 2rem;
+    border: 2px dotted rgb(255, 132, 0);
+    margin: 10px 10px;
+    padding: 0px 10px 3px 0px;
+}
+
+#container2 .div1 {
+    margin: 10px 10px;
+    width: 15em;
+    height: 15em;
+    border: 2px dotted rgb(0, 115, 255);
+    flex: 1 1 30%;
+}
