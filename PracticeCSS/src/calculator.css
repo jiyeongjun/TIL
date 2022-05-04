@@ -86,6 +86,7 @@ img:active {
 
 .ac_button button:hover {
     background-color: rgba(255, 0, 0, 0.6);
+    cursor: pointer;
 }
 
 .row_button {
@@ -107,6 +108,7 @@ img:active {
 
 .number:hover {
     background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
 }
 
 .operator {
@@ -122,6 +124,7 @@ img:active {
 
 .operator:hover {
     background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
 }
 
 .equal {
@@ -137,6 +140,7 @@ img:active {
 
 .equal:hover {
     background-color: rgb(198, 217, 248);
+    cursor: pointer;
 }
 
 button:active {

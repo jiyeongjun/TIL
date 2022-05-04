@@ -1,6 +1,6 @@
 // import { map, filter, reduce } from '../lib/fx.js'; // 서버에 올릴 경우 풀어준다.
 
-let log = console.log; 
+let log = console.log;
 
 // 이터러블/이터레이터 프로토콜
 // 이터레이터 프로토콜을 따르는 이터러블은 [Symbol.iterator]()를 포함하고 있다.
@@ -10,18 +10,18 @@ let log = console.log;
 // TODO : 제너레이터 활용
 // 무한 수열 함수
 // 제너레이터는 화살표 함수를 사용할 수 없다.
-function* infinity(a) { 
+function* infinity(a) {
   while (true) yield a++;
 }
 // iter를 계속 yield하다가 limitValue만나면 return
-function* limit(limitValue, iter){ 
-  for (const a of iter){
+function* limit(limitValue, iter) {
+  for (const a of iter) {
     yield a;
     if (a == limitValue) return;
   }
 }
 // infinity함수와 limit함수를 이용하여 구현한 홀수 추출 함수
-function* odd(limitValue){ // 예시
+function* odd(limitValue) { // 예시
   for (const a of limit(limitValue, infinity(1))) {
     if (a % 2) yield a;
     if (a == limitValue) return;
@@ -70,7 +70,7 @@ log(...under20000);
 
 let over20000 = [];
 for (const p of products) {
-  if (p.price >= 20000) over20000.push(p); 
+  if (p.price >= 20000) over20000.push(p);
 }
 log(...over20000);
 
@@ -129,8 +129,8 @@ log(reduce(add, map(p => p.price, filter(p => p.price < 20000, products))));
 // 보기 편하게 재배열
 log(
   reduce(
-    add, 
-    map(p => p.price, 
+    add,
+    map(p => p.price,
       filter(p => p.price < 20000, products))));
 // 1. products의 price를 20000미만으로 필터한다.
 // 2. 1을 통해 걸러진 값을 map을 통해 price만 뽑아낸다.
@@ -138,8 +138,8 @@ log(
 
 log(
   reduce(
-    add, 
-    filter(n => n < 20000, 
+    add,
+    filter(n => n < 20000,
       map(p => p.price, products))));
 // 이처럼 순서를 바꾸어 실행해도 된다.
 
@@ -151,45 +151,31 @@ log(
 // log와 reduce와 add까지는 별 생각 없이 작성할 수 있다.
 log(
   reduce(
-  add, [1, 2, 3, 4]));
+    add, [1, 2, 3, 4]));
 
 // 2. map을 통해 reduce의 두번째 인자를 product를 숫자로 된 배열로 평가되도록 해준다.
 log(
   reduce(
-  add, map(p => p.price, products)));
+    add, map(p => p.price, products)));
 
 // 3. filter를 통해 map의 두번째 인자를 특정 조건에 의해 걸러진 배열로 평가되도록 해준다.
 log(
   reduce(
-    add, 
-    map(p => p.price, 
+    add,
+    map(p => p.price,
       filter(p => p.price < 20000, products)))
 );
 
 // XXX : console.clear()위치
 console.clear();
 
-function isOdd(num) {
-  let curValue = 0;
-  while (curValue < Math.abs(num)) curValue += 2;
-  if (curValue === Math.abs(num)) return false;
-  return true;
-}
-console.clear();
+const go = (list) => {
+  log(list);
+};
 
-function hasRepeatedCharacter(str) {
-  // TODO: 여기에 코드를 작성합니다.
-  let curStr = '';
-  //if (str === 'abcdefghijklmnopqrstuvwxyz')return false;
-  let cnt = 0;
-    for(let cur of str){
-    for (let all of str){
-      if (cur === all) cnt++;
-    }
-  }
-  log(cnt- str.length);
-  if (cnt - str.length > 1) return true;
-  return false;
-}
-log(hasRepeatedCharacter('abcdefghijklmnopqrstuvwxyz'));
-      
+go([
+  0,
+  a => a + 1,
+  a => a + 10,
+  a => a + 100,
+  log]);

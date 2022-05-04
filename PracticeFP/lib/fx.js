@@ -1,22 +1,25 @@
-const map = (f, iter) => {
-  // f : 함수 파라미터, iter : 이터러블 프로토콜을 따르는 파라미터
+let log = console.log; // eslint-disable-line no-unused-vars
+
+const curry = f =>
+  (a, ..._) => _.length ? f(a, ..._) : (..._) => f(a, ..._);
+
+const map = curry((f, iter) => { // eslint-disable-line no-unused-vars
   let result = [];
   for (const a of iter) {
-    result.push(f(a)); // 어떤 값을 수집할 것인지는 f에게 위임한다.
+    result.push(f(a));
   }
   return result;
-}
+});
 
-
-const filter = (f, iter) => {
+const filter = curry((f, iter) => { // eslint-disable-line no-unused-vars
   let result = [];
   for (const a of iter) {
     if (f(a)) result.push(a);
   }
   return result;
-}
+});
 
-const reduce = (f, acc, iter) => {
+const reduce = curry((f, acc, iter) => { // eslint-disable-line no-unused-vars
   if (!iter) {
     iter = acc[Symbol.iterator]();
     acc = iter.next().value;
@@ -25,6 +28,7 @@ const reduce = (f, acc, iter) => {
     acc = f(acc, a);
   }
   return acc;
-}
+});
 
-//export { map, filter, reduce };
+const go = (...args) => reduce((a, f) => f(a), args);
+const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs); // eslint-disable-line no-unused-vars
