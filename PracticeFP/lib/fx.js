@@ -32,3 +32,6 @@ const reduce = curry((f, acc, iter) => { // eslint-disable-line no-unused-vars
 
 const go = (...args) => reduce((a, f) => f(a), args);
 const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs); // eslint-disable-line no-unused-vars
+
+
+export { log, curry, map, filter, reduce, go, pipe }; // 두 함수를 내보냄
