@@ -1,4 +1,5 @@
-import { log, curry, map, filter, reduce, go, pipe } from '../lib/fx.js'; // 서버에 올릴 경우 풀어준다.
+/* eslint-disable */
+import { log, curry, map, filter, reduce, go, pipe } from '../lib/fx.js';
 
 // Data Source
 const products = [
