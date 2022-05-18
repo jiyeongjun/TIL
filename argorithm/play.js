@@ -1,23 +1,24 @@
 const log = console.log;
-function addUpto(n) {
-    let total = 0;
-    for (let i = 0; i < n; i++) {
-        total += i;
+
+function countUniqueValues1(arr) {
+    // add whatever parameters you deem necessary - good luck!
+    arr.sort();
+    return arr.filter((v, i) => arr.indexOf(v) === i).length; // 중복제거
+}
+
+function countUniqueValues2(arr) {
+    // add whatever parameters you deem necessary - good luck!
+    let pointer1 = 0;
+    arr.sort();
+    for (let pointer2 = 1; pointer2 < arr.length; pointer2++) {
+        if (arr[pointer1] !== arr[pointer2]) {
+            pointer1++;
+            arr[pointer1] = arr[pointer2];
+        }
     }
-    return total;
+    return pointer1 + 1
 }
+log(countUniqueValues1([1, 2, 2, 3, 1, 5, 6, 3]));
+//log(countUniqueValues2([1, 2, 2, 3, 1, 5, 6, 3]));
 
-function addUptobyMath(n) {
-    return n * (n + 1) / 2; // 위 함수를 수학적으로 구현
-}
 
-// 1. 내장Function인 performance.now Function이용
-let t1 = performance.now();
-addUpto(100000000);
-let t2 = performance.now();
-log(`Time Elapsed: ${(t2 - t1) / 1000} sec.`);
-
-let t3 = performance.now();
-addUptobyMath(100000000);
-let t4 = performance.now();
-log(`Time Elapsed: ${(t4 - t3) / 1000} sec.`);

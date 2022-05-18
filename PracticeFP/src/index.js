@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { log, curry, map, filter, reduce, go, pipe } from '../lib/fx.js';
+import { log, curry, map, filter, reduce, go, pipe, L } from '../lib/fx.js';
 
 // Data Source
 const products = [
