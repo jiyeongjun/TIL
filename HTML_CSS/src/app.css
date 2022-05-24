@@ -16,7 +16,7 @@ h1 {
     display: flex;
 
     /* flex-flow: <'flex-direction'>과 <'flex-wrap'> */
-    /* direction : 주축설정, wrap : 아이템의 영역 초과 시 다음 라인으로 배열 */
+    /* flex-direction : 주축설정, wrap : 아이템의 영역 초과 시 다음 라인으로 배열 */
     flex-flow: row nowrap;
     /* justify-content : 주축을 따라 아이템 정렬 방식 지정 */
     justify-content: center;
