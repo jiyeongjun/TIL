@@ -4,8 +4,8 @@ import "./Expenses.css";
 
 function Expenses(props) {
   // map활용
-  const ExpenseItemList = props.items.map((el) => (
-    <ExpenseItem title={el.title} amount={el.amount} date={el.date} />
+  const ExpenseItemList = props.items.map((el, key) => (
+    <ExpenseItem key={key} title={el.title} amount={el.amount} date={el.date} />
   ));
 
   return <Card className="expenses">{ExpenseItemList}</Card>;
