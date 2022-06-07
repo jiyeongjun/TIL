@@ -1,34 +1,12 @@
 const log = console.log;
 
-// // 콜백함수
-// const add10 = (a, callback) => {
-//   setTimeout(() => callback(a + 10), 100);
-// };
-// add10(5, (res) => {
-//   add10(res, (res) => {
-//     add10(res, (res) => log(res));
-//   });
-// });
+const originArray = ["123", "456", "789"];
 
-// //프로미스
-// const add20 = (a) => {
-//   return new Promise((resolve) => setTimeout(() => resolve(a + 20)), 200);
-// };
-
-// add20(5).then(add20).then(add20).then(log);
-
-function ABCheck(str) {
-  // code goes here
-  for (let i = 0; i < str.length; i++) {
-    log(str[i].toUpperCase(), str[i + 4].toUpperCase());
-    if (str[i + 4] === undefined) return false;
-    if (str[i].toUpperCase() === "A" && str[i + 4].toUpperCase() === "B")
-      return true;
-    if (str[i].toUpperCase() === "B" && str[i + 4].toUpperCase() === "A")
-      return true;
-  }
-  //return false;
-}
-log(ABCheck("aMAJ7sBrO4CyysuoHFrgGTX"));
-// const str = "abcd";
-// log(str[4]);
+const newArray1 = originArray;
+const newArray2 = [...originArray];
+originArray.push(10);
+originArray.push(11);
+originArray.push(12);
+originArray.unshift(0);
+log(newArray1); // 새로운 배열도 변한다.
+log(newArray2); // 새로운 배열도 변한다.
