@@ -1,20 +1,34 @@
 const log = console.log;
 
-// 초기 모델
-const isValidUser = true; // 서버에서 받아왔다고 가정
-const isValidToken = true;
+// // 콜백함수
+// const add10 = (a, callback) => {
+//   setTimeout(() => callback(a + 10), 100);
+// };
+// add10(5, (res) => {
+//   add10(res, (res) => {
+//     add10(res, (res) => log(res));
+//   });
+// });
 
-if (isValidToken && isValidUser) {
-    console.log('로그인 성공!');
+// //프로미스
+// const add20 = (a) => {
+//   return new Promise((resolve) => setTimeout(() => resolve(a + 20)), 200);
+// };
+
+// add20(5).then(add20).then(add20).then(log);
+
+function ABCheck(str) {
+  // code goes here
+  for (let i = 0; i < str.length; i++) {
+    log(str[i].toUpperCase(), str[i + 4].toUpperCase());
+    if (str[i + 4] === undefined) return false;
+    if (str[i].toUpperCase() === "A" && str[i + 4].toUpperCase() === "B")
+      return true;
+    if (str[i].toUpperCase() === "B" && str[i + 4].toUpperCase() === "A")
+      return true;
+  }
+  //return false;
 }
-
-// 로그인 실패 기능을 추가할 때 (기존 코드를 재활용 한다고 가정)
-
-if (!(isValidToken && isValidUser)) {
-    console.log('로그인 실패!');
-}
-
-// 드모르간의 법칙을 이용하면 한꺼풀 벗겨낼 수 있다.
-if (!isValidToken || !isValidUser) {
-    console.log('로그인 실패!');
-}
+log(ABCheck("aMAJ7sBrO4CyysuoHFrgGTX"));
+// const str = "abcd";
+// log(str[4]);
