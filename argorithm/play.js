@@ -1,17 +1,15 @@
 const log = console.log;
 
-function binarySearch(arr, val) {
-  // add whatever parameters you deem necessary - good luck!
-  let p1 = 0;
-  let p2 = arr.length - 1;
-  let res = Math.floor((p1 + p2) / 2);
-  while (arr[res] !== val) {
-    if (p1 > p2) return -1;
-    if (val < arr[res]) p2 = res - 1;
-    else p1 = res + 1;
-    res = Math.floor((p1 + p2) / 2);
+function naiveSearch(long, short) {
+  let cnt = 0;
+  for (let i = 0; i < long.length; i++) {
+    for (let j = 0; j < short.length; j++) {
+      if (short[j] !== long[i + j]) break;
+      if (j === short.length - 1) cnt++;
+    }
   }
-  return res;
+  return cnt;
 }
 
-log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 55, 90, 110], 1000));
+log(naiveSearch("lorie loled", "lol")); // 1
+log(naiveSearch("lorie loled", "lo")); // 1
