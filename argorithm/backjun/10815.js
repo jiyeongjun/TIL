@@ -1,5 +1,5 @@
-// 백준 제출할 때 '/dev/stdin';
-
-const input = require("fs").readFileSync("backjun/input.txt").toString();
+//const readFileSyncAddress = '/dev/stdin'; // BackJun Submit
+const readFileSyncAddress = "backjun/input.txt"; // vscode Test
+const input = require("fs").readFileSync(readFileSyncAddress).toString();
 console.log(process.cwd());
 console.log(input);
