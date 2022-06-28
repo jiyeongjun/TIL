@@ -1,27 +1,50 @@
 const log = console.log;
-//const readFileSyncAddress = "/dev/stdin"; // BackJun Submit
-const readFileSyncAddress = "backjun/input.txt"; // vscode Test
-const input = require("fs")
-  .readFileSync(readFileSyncAddress)
-  .toString()
-  .split("\n");
 
-const sol = (input) => {
-  for (let i = 1; i < input.length; i++) {
-    const stack = [];
-    let res = "YES";
-    let strArr = input[i].split("");
-    for (let j = 0; j < strArr.length; j++) {
-      if (j === 0) {
-        stack.push(strArr[0]);
-        continue;
-      }
-      if (stack[stack.length - 1] === "(" && strArr[j] === ")") stack.pop();
-      else stack.push(strArr[j]);
-    }
-    if (stack.length !== 0) res = "NO";
-    console.log(res);
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
-};
+}
 
-sol(input);
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+  insert(value) {
+    const newNode = new Node(value);
+    if (this.root === null) {
+      this.root = newNode;
+      console.log(this.value);
+      return this;
+    }
+    let current = this.root;
+    while (true) {
+      if (value === current.value) return undefined;
+      if (value < current.value) {
+        if (current.left === null) {
+          current.left = newNode;
+          return this;
+        }
+        current = current.left;
+      } else if (value > current.value) {
+        if (current.right === null) {
+          current.right = newNode;
+          return this;
+        }
+        current = current.right;
+      }
+    }
+  }
+}
+
+const tree = new BinarySearchTree();
+
+tree.insert(10);
+tree.insert(5);
+tree.insert(13);
+tree.insert(11);
+tree.insert(2);
+tree.insert(16);
+tree.insert(7);
