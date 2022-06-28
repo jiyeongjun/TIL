@@ -7,19 +7,21 @@ const input = require("fs")
   .split("\n");
 
 const sol = (input) => {
+  const stack = [];
+  let res = "YES";
   for (let i = 1; i < input.length; i++) {
-    const stack = [];
-    let res = "YES";
-    let strArr = input[i].split("");
-    for (let j = 0; j < strArr.length; j++) {
-      if (j === 0) {
-        stack.push(strArr[0]);
-        continue;
+    const strArr = input[i].split("");
+    for (const chr of strArr) {
+      if (chr === "(") stack.push(1);
+      else {
+        if (!stack.pop()) {
+          res = "NO";
+          break;
+        }
       }
-      if (stack[stack.length - 1] === "(" && strArr[j] === ")") stack.pop();
-      else stack.push(strArr[j]);
     }
     if (stack.length !== 0) res = "NO";
+    else res = "YES";
     console.log(res);
   }
 };
