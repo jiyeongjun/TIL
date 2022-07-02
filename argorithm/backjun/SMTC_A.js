@@ -32,40 +32,23 @@ const sol = (input) => {
   });
   match2.sort((a, b) => {
     if (a[0] === b[0]) {
-      return b[1] - a[1];
+      return a[1] - b[1];
     } else {
-      return a[0] - b[0];
+      return b[0] - a[0];
     }
   });
-  let i = 0;
-  while (!(i === match1.length)) {
-    for (i = 0; i < match1.length; i++) {
-      if (시루의체력 - +match1[i][1] < 0) {
+  while (match1.length) {
+    for (const 마을 of match1) {
+      if (시루의체력 - +마을[1] < 0) {
         record.push(구한주민);
         구한주민 = 0;
-        시루의체력 = +input[0].split(" ")[1];
         match1.shift();
         break;
       }
-      시루의체력 -= +match1[i][1];
-      구한주민 += +match1[i][0];
+      시루의체력 -= +마을[1];
+      구한주민 += +마을[0];
     }
   }
-  i = 0;
-  while (!(i === match2.length)) {
-    for (i = 0; i < match2.length; i++) {
-      if (시루의체력 - +match2[i][0] < 0) {
-        record.push(구한주민);
-        구한주민 = 0;
-        시루의체력 = +input[0].split(" ")[1];
-        match2.shift();
-        break;
-      }
-      시루의체력 -= +match2[i][0];
-      구한주민 += +match2[i][1];
-    }
-  }
-  if (record.length === 0) return console.log(구한주민);
   return console.log(Math.max(...record));
 };
 
