@@ -6,67 +6,95 @@ const input = require("fs")
   .trim()
   .split("\n");
 
-const sol = (input) => {
-  const match1 = [];
-  const match2 = [];
-  const record = [];
-
-  const 몬스터수 = +input[0].split(" ")[0];
-  let 시루의체력 = +input[0].split(" ")[1];
-  const 몬스터공격력 = input[1].split(" ");
-  const 주민 = input[2].split(" ");
-  let 구한주민 = 0;
-
-  for (let i = 0; i < 몬스터수; i++) {
-    match1[i] = [주민[i], 몬스터공격력[i]];
+const log = console.log;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
-  for (let i = 0; i < 몬스터수; i++) {
-    match2[i] = [몬스터공격력[i], 주민[i]];
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
   }
-  match1.sort((a, b) => {
-    if (a[0] === b[0]) {
-      return a[1] - b[1];
-    } else {
-      return b[0] - a[0];
+  insert(value) {
+    const newNode = new Node(value);
+    if (this.root === null) {
+      this.root = newNode;
+      return this;
     }
-  });
-  match2.sort((a, b) => {
-    if (a[0] === b[0]) {
-      return b[1] - a[1];
-    } else {
-      return a[0] - b[0];
-    }
-  });
-  let i = 0;
-  while (!(i === match1.length)) {
-    for (i = 0; i < match1.length; i++) {
-      if (시루의체력 - +match1[i][1] < 0) {
-        record.push(구한주민);
-        구한주민 = 0;
-        시루의체력 = +input[0].split(" ")[1];
-        match1.shift();
-        break;
+    let current = this.root;
+    while (true) {
+      if (value === current.value) return undefined;
+      if (value < current.value) {
+        if (current.left === null) {
+          current.left = newNode;
+          return this;
+        }
+        current = current.left;
+      } else if (value > current.value) {
+        if (current.right === null) {
+          current.right = newNode;
+          return this;
+        }
+        current = current.right;
       }
-      시루의체력 -= +match1[i][1];
-      구한주민 += +match1[i][0];
     }
   }
-  i = 0;
-  while (!(i === match2.length)) {
-    for (i = 0; i < match2.length; i++) {
-      if (시루의체력 - +match2[i][0] < 0) {
-        record.push(구한주민);
-        구한주민 = 0;
-        시루의체력 = +input[0].split(" ")[1];
-        match2.shift();
-        break;
+  find(value) {
+    if (this.root === null) return false;
+    let current = this.root,
+      found = false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        found = true;
       }
-      시루의체력 -= +match2[i][0];
-      구한주민 += +match2[i][1];
     }
+    if (!found) return undefined;
+    return current;
   }
-  if (record.length === 0) return console.log(구한주민);
-  return console.log(Math.max(...record));
-};
 
-sol(input);
+  contains(value) {
+    if (this.root === null) return false;
+    let current = this.root,
+      found = false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+  BFS() {
+    const res = [];
+    let node = this.root;
+    const queue = [node];
+    while (queue.length) {
+      node = queue.shift();
+      res.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return res;
+  }
+}
+
+const tree = new BinarySearchTree();
+tree.insert(10);
+tree.insert(6);
+tree.insert(15);
+tree.insert(3);
+tree.insert(8);
+tree.insert(20);
+
+log(tree.BFS());
