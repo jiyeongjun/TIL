@@ -5,8 +5,8 @@ const input = require("fs")
   .toString()
   .trim()
   .split("\n");
-
-const log = console.log;
+  
+  const log = console.log;
 class Node {
   constructor(value) {
     this.value = value;
@@ -16,7 +16,7 @@ class Node {
 }
 
 class BinarySearchTree {
-  constructor() {
+constructor() {
     this.root = null;
   }
   insert(value) {
@@ -46,7 +46,7 @@ class BinarySearchTree {
   find(value) {
     if (this.root === null) return false;
     let current = this.root,
-      found = false;
+    found = false;
     while (current && !found) {
       if (value < current.value) {
         current = current.left;
