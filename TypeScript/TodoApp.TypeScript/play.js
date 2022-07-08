@@ -70,3 +70,4 @@ geolocation.getCurrentPosition(test);
 geolocation.getCurrentPosition(test, test);
 geolocation.getCurrentPosition(test, test, {});
 function test() { }
+console.log(test);

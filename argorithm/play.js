@@ -1,100 +1,33 @@
 //const readFileSyncAddress = "/dev/stdin"; // BackJun Submit
-const readFileSyncAddress = "backjun/input.txt"; // vscode Test
-const input = require("fs")
-  .readFileSync(readFileSyncAddress)
-  .toString()
-  .trim()
-  .split("\n");
-  
-  const log = console.log;
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
+// const readFileSyncAddress = "backjun/input.txt"; // vscode Test
+// const input = require("fs")
+//   .readFileSync(readFileSyncAddress)
+//   .toString()
+//   .trim()
+//   .split("\n");
+const log = console.log;
 
-class BinarySearchTree {
-constructor() {
-    this.root = null;
-  }
-  insert(value) {
-    const newNode = new Node(value);
-    if (this.root === null) {
-      this.root = newNode;
-      return this;
-    }
-    let current = this.root;
-    while (true) {
-      if (value === current.value) return undefined;
-      if (value < current.value) {
-        if (current.left === null) {
-          current.left = newNode;
-          return this;
-        }
-        current = current.left;
-      } else if (value > current.value) {
-        if (current.right === null) {
-          current.right = newNode;
-          return this;
-        }
-        current = current.right;
-      }
-    }
-  }
-  find(value) {
-    if (this.root === null) return false;
-    let current = this.root,
-    found = false;
-    while (current && !found) {
-      if (value < current.value) {
-        current = current.left;
-      } else if (value > current.value) {
-        current = current.right;
-      } else {
-        found = true;
-      }
-    }
-    if (!found) return undefined;
-    return current;
-  }
+const uglyNumbers = function (n) {
+  // TODO: 여기에 코드를 작성합니다.
+  const uglyNumbersArr = Array.from({ length: n }, () => 0);
+  uglyNumbersArr[0] = 1;
+  let [idx2, idx3, idx5] = [0, 0, 0];
 
-  contains(value) {
-    if (this.root === null) return false;
-    let current = this.root,
-      found = false;
-    while (current && !found) {
-      if (value < current.value) {
-        current = current.left;
-      } else if (value > current.value) {
-        current = current.right;
-      } else {
-        return true;
-      }
-    }
-    return false;
-  }
-  BFS() {
-    const res = [];
-    let node = this.root;
-    const queue = [node];
-    while (queue.length) {
-      node = queue.shift();
-      res.push(node.value);
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
-    }
-    return res;
-  }
-}
+  uglyNumbersArr.forEach((_, i) => {
+    const [mul2, mul3, mul5] = [
+      uglyNumbersArr[idx2] * 2,
+      uglyNumbersArr[idx3] * 3,
+      uglyNumbersArr[idx5] * 5,
+    ];
 
-const tree = new BinarySearchTree();
-tree.insert(10);
-tree.insert(6);
-tree.insert(15);
-tree.insert(3);
-tree.insert(8);
-tree.insert(20);
+    const nextUglyNum = Math.min(mul2, mul3, mul5);
+    uglyNumbersArr[i + 1] = nextUglyNum;
 
-log(tree.BFS());
+    nextUglyNum === mul2 && idx2++;
+    nextUglyNum === mul3 && idx3++;
+    nextUglyNum === mul5 && idx5++;
+  });
+  return uglyNumbersArr[n - 1];
+};
+
+log(uglyNumbers(8));

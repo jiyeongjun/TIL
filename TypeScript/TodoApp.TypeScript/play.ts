@@ -51,8 +51,8 @@ class LocalStorage<T> extends StorageTemplate<T> {
   }
 }
 
-// 다형성 
-const stringStorage = new LocalStorage<string>(); 
+// 다형성
+const stringStorage = new LocalStorage<string>();
 stringStorage.setItem("안녕", "반가워");
 stringStorage.getItem("안녕");
 const booleanStorage = new LocalStorage<boolean>();
@@ -146,3 +146,5 @@ geolocation.getCurrentPosition(test, test);
 geolocation.getCurrentPosition(test, test, {});
 
 function test() {}
+
+console.log(test);
