@@ -7,27 +7,29 @@
 //   .split("\n");
 const log = console.log;
 
-const uglyNumbers = function (n) {
+function orderOfPresentation(N, K) {
   // TODO: 여기에 코드를 작성합니다.
-  const uglyNumbersArr = Array.from({ length: n }, () => 0);
-  uglyNumbersArr[0] = 1;
-  let [idx2, idx3, idx5] = [0, 0, 0];
+  let temp = Array.from({ length: N }, () => 0);
+  let visited = Array.from({ length: N }, () => 0);
+  let arr = [...K].sort((a, b) => a - b);
+  let answer = [];
+  function DFS(L) {
+    if (L === N) {
+      if (JSON.stringify(temp) === JSON.stringify(K)) return true;
+      answer.push(temp.slice());
+    } else {
+      for (let i = 0; i < N; i++) {
+        if (!visited[i]) {
+          visited[i] = 1; // 방문처리
+          temp[L] = arr[i];
+          if (DFS(L + 1)) return answer.length;
+          visited[i] = 0; // 방문 후 다시 올라갈 때 원상복구
+        }
+      }
+    }
+  }
+  return DFS(0);
+}
 
-  uglyNumbersArr.forEach((_, i) => {
-    const [mul2, mul3, mul5] = [
-      uglyNumbersArr[idx2] * 2,
-      uglyNumbersArr[idx3] * 3,
-      uglyNumbersArr[idx5] * 5,
-    ];
-
-    const nextUglyNum = Math.min(mul2, mul3, mul5);
-    uglyNumbersArr[i + 1] = nextUglyNum;
-
-    nextUglyNum === mul2 && idx2++;
-    nextUglyNum === mul3 && idx3++;
-    nextUglyNum === mul5 && idx5++;
-  });
-  return uglyNumbersArr[n - 1];
-};
-
-log(uglyNumbers(8));
+let output = orderOfPresentation(3, [2, 3, 1]);
+console.log(output); // 3
