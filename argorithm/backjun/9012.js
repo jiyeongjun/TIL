@@ -27,5 +27,3 @@ const sol = (input) => {
 };
 
 sol(input);
-====>======>fdjkfjdkalsfj;dsaconst const const fucntion funcf
-function 
