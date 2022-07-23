@@ -16,4 +16,8 @@ const getSpanStyle = (num) => {
 };
 
 const spanStyle = getSpanStyle(16);
+
+const testFunc = () => {
+  const test = 0;
+};
 log(spanStyle);
