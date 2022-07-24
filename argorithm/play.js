@@ -77,3 +77,4 @@ for (const el of input.slice(1)) {
 }
 
 log(res.join("\n"));
+log("test");
