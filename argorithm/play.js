@@ -10,91 +10,32 @@ const input = require("fs")
 
 const log = console.log;
 
-class HashTable {
-  constructor(size = 53) {
-    this.keyMap = Array.from({ length: size }, () => []);
+class Graph {
+  constructor() {
+    this.adjacencyList = {};
   }
 
-  _hash(key) {
-    let total = 0;
-    let WEIRD_PRIME = 31;
-    for (let i = 0; i < Math.min(key.length, 100); i++) {
-      let char = key[i];
-      let value = char.charCodeAt(0) - 96;
-      total = (total * WEIRD_PRIME + value) % this.keyMap.length;
+  addVertex(vertex) { // 정점추가
+    if (!this.adjacencyList[vertex]) {
+      this.adjacencyList[vertex] = [];
     }
-    return total;
   }
-  set(key, value) {
-    let index = this._hash(key);
-    this.keyMap[index].push([key, value]);
+
+  addEdge(v1, v2) { // 간선추가
+    this.adjacencyList[v1].push(v2);
+    this.adjacencyList[v2].push(v1);
   }
-  get(key) {
-    let index = this._hash(key);
-    if (this.keyMap[index].length) {
-      for (const a of this.keyMap[index]) {
-        if (key === a[0]) return a[1];
-      }
-    }
-    return undefined;
-  }
-  values() {
-    let valuesArr = [];
-    for (const el of this.keyMap) {
-      if (el.length !== 0) {
-        for (const a of el) {
-          if (!valuesArr.includes(a[1])) valuesArr.push(a[1]);
-        }
-      }
-    }
-    return valuesArr;
-  }
-  keys() {
-    let keysArr = [];
-    for (const el of this.keyMap) {
-      if (el.length !== 0) {
-        for (const a of el) {
-          if (!keysArr.includes(a[0])) keysArr.push(a[0]);
-        }
-      }
-    }
-    return keysArr;
+
+  removeEdge(v1, v2) {
+    this.adjacencyList[v1] = this.adjacencyList[]
   }
 }
 
-let ht = new HashTable(17);
-ht.set("maroon", "#800000");
-ht.set("yellow", "#FFFF00");
-ht.set("olive", "#808000");
-ht.set("salmon", "#FA8072");
-ht.set("lightcoral", "#F08080");
-ht.set("mediumvioletred", "#C71585");
-ht.set("plum", "#DDA0DD");
-ht.set("pink", "핑크");
-ht.set("kinp", "what?");
-ht.set("wwwwwwwww", "what?");
+let g = new Graph();
+g.addVertex("Dallas");
+g.addVertex("Tokyo");
+g.addVertex("Aspen");
 
-log(ht.get("yellow"), ht.get("pink"), ht.get("kinp"));
-// #FFFF00 핑크 what?
+g.addEdge("Dallas", "Tokyo");
+console.log(g);
 
-log(ht.values());
-// [
-//   '#DDA0DD', '#FA8072',
-//   '#800000', '#FFFF00',
-//   '핑크',    '#808000',
-//   '#F08080', 'what?',
-//   '#C71585'
-// ]
-log(ht.keys());
-//[
-//   'plum',
-//   'salmon',
-//   'maroon',
-//   'yellow',
-//   'pink',
-//   'olive',
-//   'lightcoral',
-//   'kinp',
-//   'wwwwwwwww',
-//   'mediumvioletred'
-// ]
