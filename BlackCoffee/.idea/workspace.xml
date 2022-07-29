@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d8f47488-9c60-4602-9c89-55ef849f5086" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/BlackCoffee.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.prettierrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/background.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/border.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/flex.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/interactivity.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/shadow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/sizing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/spacing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/table.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/shared/modules/typhography.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/ui/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/ui/modules/chip.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/ui/modules/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/ui/modules/modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/images/moonbucks-main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/images/moonbucks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/js/api/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/js/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/js/utils/dom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/menu/menuItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/views/error.jade" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/views/index.jade" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/moonbucks-menu-server-main/views/layout.jade" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-udemy/06-usereducer-starting-project/.idea/06-usereducer-starting-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/background.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/border.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/flex.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/interactivity.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/shadow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/sizing.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/spacing.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/shared/modules/typhography.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/ui/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/ui/modules/chip.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/ui/modules/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/ui/modules/modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/moonbucks-main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/moonbucks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/utils/dom.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2CWaaWIFkIzvTuJIw0mjsVNnDiJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Project.color": "504d36",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "code.cleanup.on.save": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/jiyeongjun/Desktop/FEzerojun/TIL/BlackCoffee/client/.prettierrc.json",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/js" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="run" type="JavaScriptTestRunnerKarma">
+      <config-file value="" />
+      <karma-package-dir value="" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="8080Debug" type="JavascriptDebugType" uri="http://127.0.0.1:8080/">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BlackCoffee/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript 디버그.8080Debug" />
+      <item itemvalue="JavaScript 디버그.index.html" />
+      <item itemvalue="Karma.run" />
+      <item itemvalue="npm.start" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="JavaScript 디버그.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="d8f47488-9c60-4602-9c89-55ef849f5086" name="변경" comment="" />
+      <created>1658920857958</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658920857958</updated>
+      <workItem from="1658920859158" duration="30000" />
+      <workItem from="1658920923094" duration="433000" />
+      <workItem from="1658921717169" duration="823000" />
+      <workItem from="1658922636058" duration="45000" />
+      <workItem from="1658922688811" duration="25000" />
+      <workItem from="1658922727513" duration="223000" />
+      <workItem from="1658923122944" duration="1601000" />
+      <workItem from="1658924773158" duration="1782000" />
+      <workItem from="1658926590007" duration="38000" />
+      <workItem from="1658926646150" duration="4950000" />
+      <workItem from="1658982239801" duration="17388000" />
+      <workItem from="1659022696817" duration="962000" />
+      <workItem from="1659053167001" duration="20000" />
+      <workItem from="1659053249812" duration="601000" />
+      <workItem from="1659068842827" duration="11000" />
+      <workItem from="1659097763227" duration="14151000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
