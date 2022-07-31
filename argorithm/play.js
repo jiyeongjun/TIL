@@ -49,8 +49,36 @@ g.addVertex("Dallas");
 g.addVertex("Tokyo");
 g.addVertex("Aspen");
 
+g.removeVertex("Dallas");
+
+g.removeVertex("Asia")
+
 g.addEdge("Dallas", "Tokyo");
 
 g.removeEdge("Dallas", "Tokyo");
 console.log(g);
+
+
+// 인접 리스트 생성
+const edges = [[0, 1], [1, 2], [3, 4]];
+
+// Find the amzimum of Vertices
+const maxVertex = edges.reduce((a, c) => {
+  const bigger = Math.max(...c);
+  if (bigger > a) return bigger;
+  return a;
+}, 0);
+
+const adjList = {};
+
+for (let i = 0; i <= maxVertex; i++) {
+  adjList[i] = [];
+}
+for (let i = 0; i < edges.length; i++) {
+  adjList[edges[i][0]].push(edges[i][1]);
+  adjList[edges[i][1]].push(edges[i][0]);
+}
+
+const visited = {};
+let count = 0;
 
