@@ -3,17 +3,21 @@ const log = console.log;
 const readFileSyncAddress = "backjun/input.txt"; // vscode Test
 
 
-const dispatch = (a) => {
-  if (typeof a === 'function') a(dispatch);
-  else console.log(a);
+const L = {};
+
+L.range = function* (stop) {
+  let i = -1;
+  while (++i < stop) yield i;
 }
+log([L.range(5)]);
 
-const returnFunc =
-  (message) =>
-    (dispatch) => {
-      dispatch({ a: 1 });
-      console.log(message);
-    }
+const wow = L.range(5);
 
-
-dispatch(returnFunc("메세지출력"));
+log(wow.next());
+log(wow.next());
+log(wow.next());
+log(wow.next());
+log(wow.next());
+log(wow.next());
+log(wow.next());
+log(wow.next());
