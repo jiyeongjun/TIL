@@ -54,19 +54,3 @@ function main() {
 
 main();
 
-const findJudge = (n, trust) => {
-  const graph = getTrustGraph(trust);
-  const [가장신뢰받는자, 신뢰하는자들] = graph[0];
-  log(신뢰하는자들.length !== n - 1);
-  return graph.map(g => g[1]).filter(person => person.includes(Number(가장신뢰받는자))).length
-  && 신뢰하는자들.length !== (n - 1) ? -1 : Number(가장신뢰받는자)
-}
-
-const getTrustGraph = (trust) => {
-  const graph = {};
-  for (const [신뢰하는자, 신뢰받는자] of trust) {
-    신뢰받는자 in graph ? graph[신뢰받는자].push(신뢰하는자) : graph[신뢰받는자] = [신뢰하는자];
-  }
-  return Object.entries(graph).sort((a, b) => b[1].length - a[1].length);
-}
-log(findJudge(3, [[1, 3], [2, 3], [3, 1]]));
