@@ -54,3 +54,6 @@ function main() {
 
 main();
 
+const yes = (a) => {
+};
+yes.fetch(yes)

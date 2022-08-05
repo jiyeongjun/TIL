@@ -1,18 +1,19 @@
 export const log = console.log;
+const nop = Symbol("nop");
 
 const go1 = (a, f) => (a instanceof Promise ? a.then(f) : f(a));
 
 export const curry =
   (f) =>
-  (a, ..._) =>
-    _.length ? f(a, ..._) : (..._) => f(a, ..._);
+    (a, ..._) =>
+      _.length ? f(a, ..._) : (..._) => f(a, ..._);
 
 export const take = curry((l, iter) => {
   let res = [];
   iter = iter[Symbol.iterator]();
   return (function recur() {
     let cur;
-    while (!(cur2 = iter.next()).done) {
+    while (!(cur = iter.next()).done) {
       const a = cur.value;
       if (a instanceof Promise)
         return a
@@ -26,18 +27,22 @@ export const take = curry((l, iter) => {
 });
 export const takeAll = take(Infinity);
 
+
+const reduceF = (acc, a, f) =>
+  a instanceof Promise ?
+    a.then(a => f(acc, a), e => e === nop ? acc : Promise.reject(e)) :
+    f(acc, a);
+
+const head = iter => go1(take(1, iter), ([h]) => h);
+
 export const reduce = curry((f, acc, iter) => {
-  if (!iter) {
-    iter = acc[Symbol.iterator]();
-    acc = iter.next().value;
-  } else {
-    iter = iter[Symbol.iterator]();
-  }
+  if (!iter) return reduce(f, head(iter = acc[Symbol.iterator]()), iter);
+  
+  iter = iter[Symbol.iterator]();
   return go1(acc, function recur(acc) {
     let cur;
     while (!(cur = iter.next()).done) {
-      const a = cur.value;
-      acc = f(acc, a);
+      acc = reduceF(acc, cur.value, f);
       if (acc instanceof Promise) return acc.then(recur);
     }
     return acc;
@@ -49,8 +54,8 @@ export const go = (...args) => reduce((val, f) => f(val), args);
 
 export const pipe =
   (f, ...fs) =>
-  (...as) =>
-    go(f(...as), ...fs);
+    (...as) =>
+      go(f(...as), ...fs);
 
 // 지연평가
 export const L = {};
@@ -68,7 +73,6 @@ L.map = curry(function* (f, iter) {
   }
 });
 
-const nop = Symbol("nop");
 
 L.filter = curry(function* (f, iter) {
   for (const a of iter) {
