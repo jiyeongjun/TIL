@@ -29,3 +29,6 @@ log(solution('2987'))
 log(solution('1890'))
 log(solution('0129'))
 log(solution('0000'))
+
+
+// kang jin ju babo
