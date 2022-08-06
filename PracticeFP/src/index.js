@@ -9,14 +9,19 @@ import {
   L,
   take,
   takeAll,
+  flatMap,
+  join
 } from "../lib/fx.js";
+
+const delay500 = a => new Promise(resolve =>
+  setTimeout(() => resolve(a), 500))
 
 const add = (a, b) => a + b;
 go(
   [1, 2, 3, 4, 5],
-  L.map((a) => Promise.resolve(a * a)),
+  L.map(el => delay500(el * el)),
   L.filter((a) => a % 2),
   reduce(add),
-  log
+  log // 35
 );
 
