@@ -37,7 +37,7 @@ const head = iter => go1(take(1, iter), ([h]) => h);
 
 export const reduce = curry((f, acc, iter) => {
   if (!iter) return reduce(f, head(iter = acc[Symbol.iterator]()), iter);
-  
+
   iter = iter[Symbol.iterator]();
   return go1(acc, function recur(acc) {
     let cur;
@@ -110,3 +110,22 @@ export const join = curry((sep = ",", iter) =>
 export const map = curry(pipe(L.map, takeAll));
 
 export const filter = curry(pipe(L.filter, takeAll));
+
+// 병렬평가
+export const C = {};
+
+function noop() {
+};
+const catchNoop = ([...arr]) => (arr.forEach(a => a instanceof Promise ? a.catch(noop) : a), arr);
+
+C.reduce = curry((f, acc, iter) => iter ?
+  reduce(f, acc, catchNoop(iter)) :
+  reduce(f, catchNoop(acc))
+);
+
+C.take = curry((l, iter) => take(l, catchNoop(iter)));
+C.takeAll = C.take(Infinity);
+C.map = curry(pipe(L.map, C.takeAll));
+C.filter = curry(pipe(L.filter, C.takeAll));
+
+
