@@ -13,8 +13,8 @@ interface IButton {
 
 const Button = styled.button.attrs({type: "button"})<IButton>`
   background-color: ${({theme, backgroundColor}) =>
-          (backgroundColor && theme.mode[backgroundColor]) || theme.mode.green};
-  color: ${({theme, color}) => (color && theme.mode[color]) || theme.mode.white};
+          (backgroundColor && theme.mode[backgroundColor]) || theme.mode.DefaultButtonBackground};
+  color: ${({theme, color}) => (color && theme.mode[color]) || theme.mode.DefaultButtonColor};
   font-size: ${({theme, fontSize}) => (fontSize && theme.fontSizes[fontSize]) || theme.fontSizes.md};
   font-weight: ${({bold}) => (bold ? "bold" : "normal")};
   pointer-events: ${({disabled}) => (disabled ? "none" : "auto")};
@@ -24,9 +24,6 @@ const Button = styled.button.attrs({type: "button"})<IButton>`
   border: 1px solid ${({theme, borderColor}) => (borderColor && theme.mode[borderColor]) || theme.mode.gray2};
   text-align: center;
   padding: ${({paddingSize}) => (paddingSize ? paddingSize : "10px 15px")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
 `;
 

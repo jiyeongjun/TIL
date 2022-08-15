@@ -7,14 +7,18 @@ const GlobalStyles = createGlobalStyle`
 
   ;
 
-  * {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
-  body {
+  html, body {
     font-family: sans-serif;
-    box-sizing: border-box;
+    margin: 0;
+    overflow-x: hidden;
   }
 
 `;

@@ -1,13 +1,19 @@
-import React, {useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {ThemeProvider} from "styled-components";
-import Backgound from "./style/background";
+import BackGround from "./style/background";
 import {Todo} from './todo.model';
+import styled from "styled-components";
 
 import TodoList from "./components/TodoList";
 import NewTodo from "./components/NewTodo";
 import Toggle from "./components/Toggle";
+import Counter from "./components/Counter"
+import Auth from './components/Auth';
+
 import {useDarkMode} from "./hooks/useDarkMode";
 import {dark, light, fontSizes, fontWeights} from "./style/theme";
+import Header from "./components/Header";
+import Text from "./style/Text";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -22,7 +28,6 @@ function App() {
 
 
   const todoAddHandler = (text: string) => {
-    console.log(todos);
     setTodos(prevTodos => [...prevTodos,
       {id: Math.random().toString(), text: text}]);
   }
@@ -35,11 +40,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Backgound>
+      <Header themeMode={themeMode} toggleTheme={toggleTheme}/>
+      <BackGround>
+        <Auth/>
         <NewTodo onAddTodo={todoAddHandler}/>
         <TodoList items={todos} onDeleteTodo={todoDeleteHandler}/>
-        <Toggle themeMode={themeMode} toggleTheme={toggleTheme}/>
-      </Backgound>
+        <Counter/>
+      </BackGround>
     </ThemeProvider>
   );
 }

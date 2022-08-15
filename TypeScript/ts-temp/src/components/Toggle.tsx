@@ -24,7 +24,6 @@ const Wrapper = styled.button<IWrapper>`
   margin: 0 auto;
   overflow: hidden;
   padding: 0.2rem;
-  position: fixed;
   z-index: 1;
   width: 2rem;
   height: 2rem;

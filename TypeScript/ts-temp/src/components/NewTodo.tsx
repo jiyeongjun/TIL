@@ -4,6 +4,8 @@ import styled from "styled-components";
 const StyledNewTodo = styled.div`
   box-sizing: border-box;
   margin: 2rem;
+  display: flex;
+  justify-content: center;
 
   & form {
     width: 90%;

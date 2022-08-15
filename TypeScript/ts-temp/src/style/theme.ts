@@ -9,6 +9,9 @@ const dark = {
   background   : "rgb(217, 223, 226)",
   tableHeader  : "rgba(255,255,255,0.02)",
   themeIcon    : "#FBE302",
+  // button-color
+  DefaultButtonColor     : "#ffffff",
+  DefaultButtonBackground: "#002366",
   // point-color
   blue1: "#f1f8ff",
   blue2: "#c0d3eb",
@@ -33,7 +36,10 @@ const light = {
   divider      : "rgba(106, 115, 125, 0.3)",
   background   : "rgb(217, 223, 226)",
   tableHeader  : "rgba(0, 0, 0, 0.02)",
-  themeIcon    : "#1fab89",
+  themeIcon    : "#002366",
+  // button-color
+  DefaultButtonColor     : "#002366",
+  DefaultButtonBackground: "#ffffff",
   // point-color
   blue1: "#f1f8ff",
   blue2: "#c0d3eb",

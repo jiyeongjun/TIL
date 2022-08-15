@@ -12,6 +12,10 @@ declare module "styled-components" {
       background: string;
       tableHeader: string;
       themeIcon: string;
+      // button-color
+      DefaultButtonColor: string;
+      DefaultButtonBackground: string;
+      // point-color
       blue1: string;
       blue2: string;
       blue3: string;

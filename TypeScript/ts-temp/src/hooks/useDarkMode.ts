@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 
 export const useDarkMode = (): [string, () => void] => {
   const [theme, setTheme] = useState("light");
@@ -12,7 +12,7 @@ export const useDarkMode = (): [string, () => void] => {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => { // useEffect 는 화면 깜박임 발생
     const localTheme = window.localStorage.getItem("theme");
     localTheme && setTheme(localTheme);
   }, []);
