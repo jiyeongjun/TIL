@@ -15,10 +15,17 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  body {
+    margin: 0;
+  }
+
   html, body {
     font-family: sans-serif;
-    margin: 0;
-    overflow-x: hidden;
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
   }
 
 `;

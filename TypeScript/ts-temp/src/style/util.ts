@@ -12,7 +12,7 @@ const customMediaQuery = (env: string): string => {
       return "@media (max-width: 575px)";
 
     default :
-      return `@media (max-width: ${Number(env)})`;
+      return `@media (max-width: ${(env)})`;
   }
 };
 
@@ -45,5 +45,8 @@ export {media};
 // }
 //
 // ${media.smallMobile} {
+//   background: blue;
+// }
+// ${media.custom("992px")} {
 //   background: blue;
 // }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import {media} from '../style/util'
+import {media} from '../../style/util';
+import Button from "../../style/Button";
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -40,23 +41,6 @@ const StyledUl = styled.ul`
     }
   }
 
-  & button {
-    background: #50005a;
-    border: 1px solid #50005a;
-    color: white;
-    padding: 0.5rem 1.5rem;
-    cursor: pointer;
-  }
-
-  & button:focus {
-    outline: none;
-  }
-
-  & button:hover,
-  & button:active {
-    background: #6a0a77;
-    border-color: #6a0a77;
-  }
 `
 
 interface TodoListProps {
@@ -65,12 +49,13 @@ interface TodoListProps {
 }
 
 const TodoList = (props: TodoListProps) => {
-  return (<StyledUl>
+  return (
+    <StyledUl>
       {props.items.map(todo =>
         <li key={todo.id}>
           <span>{todo.text}</span>
-          <button onClick={() => props.onDeleteTodo(todo.id)}>DELETE
-          </button>
+          <Button fontSize="sm" onClick={() => props.onDeleteTodo(todo.id)}>DELETE
+          </Button>
         </li>
       )}
     </StyledUl>

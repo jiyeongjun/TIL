@@ -1,4 +1,4 @@
-import {useEffect, useLayoutEffect, useState} from "react";
+import {useLayoutEffect, useState} from "react";
 
 export const useDarkMode = (): [string, () => void] => {
   const [theme, setTheme] = useState("light");

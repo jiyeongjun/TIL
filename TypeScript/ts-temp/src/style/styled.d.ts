@@ -13,9 +13,10 @@ declare module "styled-components" {
       tableHeader: string;
       themeIcon: string;
       // button-color
-      DefaultButtonColor: string;
-      DefaultButtonBackground: string;
+      defaultButtonColor: string;
+      defaultButtonBackground: string;
       // point-color
+      hover: string;
       blue1: string;
       blue2: string;
       blue3: string;
@@ -27,6 +28,8 @@ declare module "styled-components" {
       black: string;
       red: string;
       white: string;
+      lightImg: string;
+      darkImg: string;
       [key: string]: any;
       // TODO: 객체에 string 으로 접근 시 에러 방지를 위한 조치
     };

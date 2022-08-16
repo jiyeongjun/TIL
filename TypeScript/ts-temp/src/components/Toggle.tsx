@@ -11,6 +11,19 @@ interface IWrapper {
   themeMode: string;
 }
 
+
+const Toggle = ({themeMode, toggleTheme}: IToggle) => {
+  return (
+    <>
+      <Wrapper onClick={toggleTheme} themeMode={themeMode}>
+        {themeMode === "light" ? <MdLightMode/> : <MdDarkMode/>}
+      </Wrapper>
+    </>
+  );
+};
+
+export default Toggle;
+
 const Wrapper = styled.button<IWrapper>`
   background: ${({theme}) => theme.mode.mainBackground};
   border: 1px solid ${({theme}) => theme.mode.border};
@@ -34,39 +47,32 @@ const Wrapper = styled.button<IWrapper>`
     color: ${({theme}) => theme.mode.themeIcon};
 
     &:first-child {
-      width: 23px;
-      height: 23px;
-      animation: show 0.4s ease forwards;
+      width: 24px;
+      height: 24px;
+      animation: show 0.6s ease forwards;
     }
 
     &:nth-child(2) {
-      width: 23px;
-      height: 23px;
-      animation: show 0.4s ease forwards;
+      width: 24px;
+      height: 24px;
+      animation: show 0.6s ease forwards;
     }
 
     @keyframes show {
-      from {
+      0% {
         transform: rotate(0deg);
         opacity: 0;
       }
-      to {
-        transform: rotate(360deg);
+      50% {
+        transform: rotate(180deg);
+      }
+      95% {
+        transform: scale(1.2);
+      }
+      100% {
         opacity: 1;
       }
     }
 
   }
 `;
-
-const Toggle = ({themeMode, toggleTheme}: IToggle) => {
-  return (
-    <>
-      <Wrapper onClick={toggleTheme} themeMode={themeMode}>
-        {themeMode === "light" ? <MdLightMode/> : <MdDarkMode/>}
-      </Wrapper>
-    </>
-  );
-};
-
-export default Toggle;

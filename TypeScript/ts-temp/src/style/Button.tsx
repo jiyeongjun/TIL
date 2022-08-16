@@ -11,10 +11,10 @@ interface IButton {
   isClick?: boolean;
 }
 
-const Button = styled.button.attrs({type: "button"})<IButton>`
+const Button = styled.button<IButton>`
   background-color: ${({theme, backgroundColor}) =>
-          (backgroundColor && theme.mode[backgroundColor]) || theme.mode.DefaultButtonBackground};
-  color: ${({theme, color}) => (color && theme.mode[color]) || theme.mode.DefaultButtonColor};
+          (backgroundColor && theme.mode[backgroundColor]) || theme.mode.defaultButtonBackground};
+  color: ${({theme, color}) => (color && theme.mode[color]) || theme.mode.defaultButtonColor};
   font-size: ${({theme, fontSize}) => (fontSize && theme.fontSizes[fontSize]) || theme.fontSizes.md};
   font-weight: ${({bold}) => (bold ? "bold" : "normal")};
   pointer-events: ${({disabled}) => (disabled ? "none" : "auto")};
@@ -25,6 +25,13 @@ const Button = styled.button.attrs({type: "button"})<IButton>`
   text-align: center;
   padding: ${({paddingSize}) => (paddingSize ? paddingSize : "10px 15px")};
   height: 100%;
+
+  &:hover,
+  &:active {
+    background: ${({theme}) => theme.mode.hover};
+    border-color: ${({theme}) => theme.mode.hover};
+  }
+
 `;
 
 export default Button;

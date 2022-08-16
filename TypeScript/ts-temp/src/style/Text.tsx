@@ -9,7 +9,7 @@ interface IText {
   isClick?: boolean;
 }
 
-const Text = styled.span<IText>`
+export const Text = styled.span<IText>`
   display: inline-block;
   color: ${({theme, textColor}) => (textColor && theme.mode[textColor]) || theme.mode.primaryText};
   font-size: ${({theme, fontSize}) => (fontSize && (theme.fontSizes[fontSize] || fontSize)) || theme.fontSizes.md};
@@ -18,4 +18,12 @@ const Text = styled.span<IText>`
   cursor: ${({isClick}) => (isClick ? "pointer" : "default")};
 `;
 
-export default Text;
+export const TextA = styled.a<IText>`
+  display: inline-block;
+  color: ${({theme, textColor}) => (textColor && theme.mode[textColor]) || theme.mode.primaryText};
+  font-size: ${({theme, fontSize}) => (fontSize && (theme.fontSizes[fontSize] || fontSize)) || theme.fontSizes.md};
+  font-weight: ${({theme, fontWeight}) => (fontWeight && theme.fontWeights[fontWeight]) || theme.fontWeights.regular};
+  line-height: ${({lineHeight}) => lineHeight};
+  cursor: ${({isClick}) => (isClick ? "pointer" : "default")};
+`;
+

@@ -1,5 +1,7 @@
 import React, {useRef} from 'react';
 import styled from "styled-components";
+import {Text} from "../../style/Text";
+import Button from "../../style/Button";
 
 const StyledNewTodo = styled.div`
   box-sizing: border-box;
@@ -36,23 +38,12 @@ const StyledNewTodo = styled.div`
     border-color: #50005a;
   }
 
-  & button {
-    background: #50005a;
-    border: 1px solid #50005a;
-    color: white;
+  & Button {
     padding: 0.5rem 1.5rem;
     cursor: pointer;
+    height: 2.5rem;
   }
 
-  & button:focus {
-    outline: none;
-  }
-
-  & button:hover,
-  & button:active {
-    background: #6a0a77;
-    border-color: #6a0a77;
-  }
 
 
 `
@@ -74,10 +65,10 @@ const NewTodo = (props: NewTodoProps) => {
     <StyledNewTodo>
       <form onSubmit={todoSubmitHandler}>
         <div className="form-control">
-          <label htmlFor="todo-text">Todo Text</label>
+          <label htmlFor="todo-text"><Text>Todo Text</Text></label>
           <input type="text" id="todo-text" ref={textInputRef}/>
         </div>
-        <button type="submit">ADD TODO</button>
+        <Button type="submit">ADD TODO</Button>
       </form>
     </StyledNewTodo>
   );
