@@ -11,9 +11,9 @@ const dark = {
   themeIcon    : "#FBE302",
   // button-color
   defaultButtonColor     : "#ffffff",
-  defaultButtonBackground: "#4169e1",
+  defaultButtonBackground: "#263970",
   // point-color
-  hover   : "#2052dc",
+  hover   : "#38446c",
   blue1   : "#f1f8ff",
   blue2   : "#c0d3eb",
   blue3   : "#00adb5",

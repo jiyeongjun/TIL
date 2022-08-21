@@ -1,4 +1,4 @@
-import {Todo} from './todo.model';
+import {Todo} from './model/todo.model';
 
 const todos: Todo[] = [];
 

@@ -1,9 +1,10 @@
 import React from "react";
 import {useDispatch} from 'react-redux';
-import {authActions} from "../../store";
+import {authActions} from "../../store/auth";
 
 import styled from 'styled-components';
 import Button from "../../style/Button";
+import {Text} from "../../style/Text";
 
 
 const Auth = () => {
@@ -19,14 +20,13 @@ const Auth = () => {
       <section>
         <form onSubmit={e => loginHandler(e)}>
           <div className="control">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email"><Text>Email</Text></label>
             <input type="email" id="email"/>
           </div>
           <div className="control">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password"><Text>Password</Text></label>
             <input type="password" id='password'/>
           </div>
-          <button type="button">fds</button>
           <Button>Login</Button>
         </form>
       </section>
@@ -37,13 +37,14 @@ const Auth = () => {
 export default Auth;
 
 const StyledAuth = styled.main`
-  margin: 5rem auto;
+  margin: 2rem auto;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
   width: 25rem;
   border-radius: 8px;
+  border: 1px solid ${({theme}) => theme.mode.border};
   padding: 1rem;
   text-align: center;
-  background-color: #f4f0fa;
+  background-color: ${({theme}) => theme.mode.background};
 
   & .control {
     margin-bottom: 0.5rem;
@@ -63,5 +64,10 @@ const StyledAuth = styled.main`
     border-radius: 4px;
     padding: 0.25rem;
     border: 1px solid #ccc;
+  }
+
+  button {
+    margin-top: 1rem;
+    height: 2.5rem;
   }
 `
