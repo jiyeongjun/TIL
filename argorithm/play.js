@@ -1,8 +1,22 @@
-const star = (n) => Array(n).fill('*').forEach((e, i) => console.log(e.repeat(i + 1)));
-star(20); // what??
+const user = {
+  chatId: '',
+  videoId: '',
+};
+let chatFlag = false;
+let videoFlag = false;
+const client = [];
 
 
-// 1111
-// 222
-// 3
-// 4
+const chatIdPromise = new Promise((resolve, reject) => {
+  if (chatFlag) resolve(true);
+});
+
+const videoPromise = new Promise((resolve, reject) => {
+  if (videoFlag) resolve(true);
+});
+
+Promise.all([chatIdPromise, videoPromise]).then((values) => {
+  console.log(values);
+  client.push(user);
+});
+
