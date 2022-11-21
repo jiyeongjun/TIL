@@ -14,16 +14,19 @@ import {
   C
 } from "../lib/fx.js";
 
-const delay500 = (a, name) => new Promise(resolve => {
-  console.log(`${name}: ${a}`);
-  setTimeout(() => resolve(a), 500);
-});
+const arr = [1, 2, 3, 4, 5];
+const map1 = (f, iter) => {
+  const res = [];
+  for (const a of iter) {
+    res.push(f(a));
+  }
+  return res;
+}
 
-console.time('');
-go([1, 2, 3, 4, 5, 6, 7, 8],
-  L.map(a => delay500(a * a, 'map 1')),
-  C.filter(a => delay500(a % 2, 'filter 2')),
-  L.map(a => delay500(a + 1, 'map 3')),
-  take(2),
-  log,
-  _ => console.timeEnd(''));
+const gmap = function* (f, iter) {
+  for (const a of iter) yield f(a);
+}
+
+for (const a of gmap((el) => el + 2, arr)) {
+  console.log(a);
+}
