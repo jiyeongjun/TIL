@@ -33,7 +33,7 @@ Promise.divAll = async (arr, num) => {
   return result;
 }
 
-Promise.divAll([promise3, promise4, promise3, promise4, promise4, promise4, promise4], 1)
+Promise.divAll([promise3, promise4, promise3, promise4, promise4, promise4, promise4], 3)
   .then(console.log);
 
 Promise.all([promise3, promise4, promise3, promise4, promise4, promise4, promise4]).then(console.log)
@@ -58,4 +58,9 @@ Promise.all([promise3, promise4, promise3, promise4, promise4, promise4, promise
 //   console.log("custom2", values);
 // });
 
+const a = {
+  c: 3,
+  [3]: 4
+}
+console.log(a);
 
