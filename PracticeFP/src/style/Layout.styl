@@ -1,0 +1,21 @@
+.layout
+  display grid
+  padding: 0
+  margin: 0
+  height: 100vh
+
+  grid-template-rows 50px 150px auto 75px
+
+  grid-template-areas "header"\ "menu"\ "main"\ "footer"
+
+  &__header
+    grid-area header
+
+  &__menu
+    grid-area menu
+
+  &__main
+    grid-area main
+
+  &__footer
+    grid-area footer
